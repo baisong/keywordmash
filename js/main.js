@@ -14,6 +14,23 @@
  *
  * Output template ad text
  */
+var QueryString = function() {
+                    var query_string = {};
+                    var query = window.location.search.substring(1);
+                    var vars = query.split("&");
+                    for (var i = 0; i < vars.length; i++) {
+                        var pair = vars[i].split("=");
+                        if (typeof query_string[pair[0]] === "undefined") {
+                            query_string[pair[0]] = pair[1];
+                        } else if (typeof query_string[pair[0]] === "string") {
+                            var arr = [query_string[pair[0]], pair[1]];
+                            query_string[pair[0]] = arr;
+                        } else {
+                            query_string[pair[0]].push(pair[1]);
+                        }
+                    }
+                    return query_string;
+                }();
 
 function suffixArray(arr, string) {
   var newArray = [];
@@ -85,8 +102,13 @@ var clusters = [
   ['uzbeki', 'uzbek', 'uzbekistan']
 ];
 
-for (var ii = 0; ii < clusters.length; ii++) {
-var a = clusters[ii];
+var cluster = false;
+if (QueryString.hasOwnProperty('cluster') {
+    cluster = decodeURIComponent(QueryString['cluster']);
+}
+if (cluster !== false && (cluster > -1 && cluster < clusters.length)) {
+	
+var a = clusters[cluster];
 var a_plural = suffixArray(a, "s");
 var b = ['speaking', 'born', 'american'];
 var c = ['women', 'men', 'youth', 'children', 'boys', 'girls', 'families', 'seniors', 'elderly', 'elders'];
