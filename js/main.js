@@ -102,9 +102,9 @@ var clusters = [
 	['uzbeki', 'uzbek', 'uzbekistan']
 ];
 var cluster = false;
-if (QueryString.hasOwnProperty('cluster') {
-		cluster = decodeURIComponent(QueryString['cluster']);
-	}
+if (QueryString.hasOwnProperty('cluster')) {
+	cluster = decodeURIComponent(QueryString['cluster']);
+}
 	if (cluster !== false && (cluster > -1 && cluster < clusters.length)) {
 		var a = clusters[cluster];
 		var a_plural = suffixArray(a, "s");
