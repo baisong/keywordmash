@@ -20,7 +20,24 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
         <!-- Add your site or application content here -->
-        <div id="menu"></div>
+        <v-tabs id="mobile-tabs-3" grow>
+  <v-tab-item 
+    v-for="i in 3"
+    v-bind:href="'#mobile-tabs-3-' + i"
+    slot="activators"
+  >
+    Item {{ i }}
+  </v-tab-item>
+  <v-tab-content 
+    v-for="i in 3" 
+    v-bind:id="'mobile-tabs-3-' + i"
+    slot="content"
+  >
+    <v-card>
+      <v-card-text>{{ text }}</v-card-text>
+    </v-card>
+  </v-tab-content>
+</v-tabs>
         <div id="content"></div>
         <script src="js/main.js"></script>
     </body>
