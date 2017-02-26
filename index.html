@@ -20,6 +20,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
         <!-- Add your site or application content here -->
+                <div id="app">
         <v-tabs id="mobile-tabs-3" grow>
   <v-tab-item 
     v-for="i in 3"
@@ -39,7 +40,7 @@
   </v-tab-content>
 </v-tabs>
         <div id="content"></div>
-        <div id="app">
+
     <img src="https://vuejs.org/images/logo.png" alt="Vue logo">
     <h1>\{{ greeting }}</h1>
     <ul>
@@ -65,6 +66,9 @@
   </div>
 
   <script>
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+12	Vue.use(Vuetify);
     new Vue({
       el: '#app',
       data: {
